@@ -1,1 +1,2 @@
 -- Find tracks (id, name and composer) that are part of a line in an invoice.
+select distinct tracks.TrackId, tracks.Name, tracks.Composer from invoice_items join tracks on tracks.TrackId = invoice_items.TrackId;

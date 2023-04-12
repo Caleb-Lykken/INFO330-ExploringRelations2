@@ -1,1 +1,2 @@
 -- Show the customer's full name, Invoice ID, Date of the invoice and billing country of customers who are from Brazil.
+Select customers.FirstName || ' ' || customers.LastName as 'full name', invoices.InvoiceId, invoices.InvoiceDate, invoices.BillingCountry from customers join invoices on customers.customerId = invoices.customerID where country = 'Brazil';

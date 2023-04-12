@@ -1,1 +1,2 @@
 -- What was the most purchased track of 2013?
+select tracks.Name as 'Track_name', artists.Name as 'Artist_Name' , sum(invoice_items.quantity) as 'number_of_tracks_sold' from tracks join albums on tracks.AlbumId = albums.AlbumId join invoice_items on tracks.TrackId = invoice_items.TrackId join artists on artists.ArtistId = albums.ArtistId join invoices on invoices.InvoiceId = invoice_items.InvoiceId where invoices.InvoiceDate like '%2013%' limit 1;

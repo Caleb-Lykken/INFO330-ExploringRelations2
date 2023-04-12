@@ -1,1 +1,2 @@
 -- Which sales agent made the most in sales in 2010?
+select employees.FirstName || ' ' || employees.LastName as 'AgentFullName', employees.Title, sum(invoice_items.quantity) as 'TotalInvoices' from employees join customers on employees.EmployeeId = customers.SupportRepId join invoices on customers.CustomerId = invoices.customerId join invoice_items on invoice_items.InvoiceId = invoices.InvoiceId where invoices.invoicedate like '%2010%' order by TotalInvoices limit 1;
